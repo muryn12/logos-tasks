@@ -1,0 +1,228 @@
+.textRedactor{   
+width: 600px;
+margin: 10px auto;
+}
+
+.topBox{
+    width: 600px;
+    border: 1px solid black;
+    background-color: #e8ecee;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.button{
+    margin: 10px 250px;
+}
+
+#myTextarea{
+    width: 550px;
+    height: 130px;
+    border: 2px solid rgb(119, 212, 243);
+    border-radius: 10px;
+    margin: 5px 11px;
+}
+
+.textareaButton{
+    width: 578px;
+    height: 178px;
+    background-color: #e8ecee;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.bottomBox{
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #e8ecee;
+}
+
+.btnEdit{
+    background-color: yellow;
+}
+
+.btnStyle{
+    background-color: #09a3f0;
+    color: white;
+}
+
+.bottomBoxStyle{
+    width: 600px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.style{
+    margin-left: 30px;
+}
+
+.radioButton{
+    margin-left: 10px;
+}
+
+.fontFamily{
+    margin-left: 10px;
+}
+
+input[type="button"]{
+    border-radius: 6px;
+}
+
+.background,
+.color{
+    margin: 0 auto;
+    border: 1px solid black;
+    display: flex;
+    width: 156px;
+    height: 156px;
+    flex-wrap: wrap;
+    position: relative;
+    left: 100px;
+    top: -160px;
+}
+
+.size{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.green{
+    background-color: green;
+}
+
+.orange{
+    background-color: orange;
+}
+
+.white{
+    background-color: white;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.gray{
+    background-color: gray;
+}
+
+.pink{
+    background-color: pink;
+}
+
+.purple{
+    background-color: purple;
+}
+
+.black{
+    background-color: black;
+}
+
+.something{
+    width: 650px;
+    min-height: 130px;
+    border: 1px solid black;
+    margin: auto;
+    background-color: #e8ecee;
+}
+
+.btnAdd{
+    background-color: brown;
+    color: white;
+}
+
+.btnSave,
+.createTable,
+.createList{
+    background-color: rgb(19, 156, 19);
+    color: white;
+}
+
+.addTable{
+    margin: 20px 0;
+}
+
+.chooseSomething,
+.addTableStyle,
+.addListStyle{
+    margin-left: 30px;
+}
+
+.addList{
+    margin: 20px 0;
+}
+
+.formGroup{
+    margin: 10px 0;
+}
+
+.countTr{
+    margin-left: 50px;
+    width: 450px;
+}
+
+.countTd{
+    margin-left: 50px;
+    width: 450px;
+}
+
+.widthOfTd{
+    margin-left: 35px;
+    width: 450px;
+}
+
+.heightOfTd{
+    margin-left: 30px;
+    width: 450px;
+}
+
+.widthOfBorder{
+    margin-left: 15px;
+    width: 50px;
+}
+
+.marks,
+.styleOfBorder{
+    display: flex;
+}
+
+.typeOfBorder,
+.colorOfBorder{
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 21px;
+}
+
+.margin{
+    margin: 10px;
+}
+
+.countLi{
+    margin-left: 80px;
+    width: 450px;
+}
+
+.typeOfMarks{
+    margin-left: 50px;
+    width: 452px;
+    height: 21px;
+    margin-top: 10px;
+}

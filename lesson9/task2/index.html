@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="text">
+    <h2 id="color" onclick="color()">Колір</h2>
+    <h2 id="img" onclick="img()">Зображення</h2>
+</div>
+    <div class="background" id="background" style="display: none">
+        <div class="red size"id="red" onclick="chooseColor('red')"></div>
+        <div class="blue size"id="blue" onclick="chooseColor('blue')"></div>
+        <div class="green size"id="green" onclick="chooseColor('green')" ></div>
+        <div class="orange size"id="orange" onclick="chooseColor('orange')" ></div>
+        <div class="white size"id="white" onclick="chooseColor('white')" ></div>
+        <div class="yellow size"id="yellow" onclick="chooseColor('yellow')" ></div>
+        <div class="gray size"id="gray" onclick="chooseColor('gray')" ></div>
+        <div class="pink size"id="pink" onclick="chooseColor('pink')" ></div>
+        <div class="purple size"id="purple" onclick="chooseColor('purple')" ></div>
+    </div>
+
+    <div id="foto" class="foto" style="display: none">
+        <img src="img/0335_cward2010-07833-printsc-459x305.jpg" id="one" class="nature" onclick="chooseImage('one')">
+        <img src="img/250px-Bachalpsee_reflection.jpg" id="two" class="nature" onclick="chooseImage('two')">
+        <img src="img/Annabaroo_David-Wagland.jpg" id="three" class="nature" onclick="chooseImage('three')">
+        <img src="img/d863e1bfdd2acba50732d48ca8a70cb0.jpg" id="four" class="nature" onclick="chooseImage('four')">
+        <img src="img/mountain_brook.jpg" id="five" class="nature" onclick="chooseImage('five')">
+        <img src="img/nature-01.jpg" id="six" class="nature" onclick="chooseImage('six')">
+        <img src="img/nature-wallpaper14.jpg" id="seven" class="nature" onclick="chooseImage('seven')"> 
+        <img src="img/pexels-photo-236047.jpeg" id="eight" class="nature" onclick="chooseImage('eight')">
+        <img src="img/pexels-photo-257360.jpeg" id="nine" class="nature" onclick="chooseImage('nine')">
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

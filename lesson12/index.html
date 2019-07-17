@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="textRedactor">
+
+        <div class="topBox" id="topBox">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="button">
+            <input type="button" name="btnEdit" class="btnEdit" id="edit" value="Edit" onclick="editText()">
+            <input type="button" name="btnStyle" class="btnStyle" id="style" value="Style" onclick="styleText()">
+        </div>
+
+        <div class="bottomBox" id="bottomBox">
+            <div class="textareaButton" id="textareaButton" style="display: none">
+                <textarea id="myTextarea"></textarea>
+                <input type="button" name="btnAdd" class="btnAdd" value="Add" onclick="addSomething()">
+                <input type="button" name="btnSave" class="btnSave" value="Save" onclick="saveText()">
+            </div>
+        </div>
+
+        <div class="something" id="something" style="display: none">
+            <div class="chooseSomething">
+                <h2>Choose what you want:</h2>
+                <input type="radio" name="add" value="table" onclick="setTable()"><span>table</span>
+                <input type="radio" name="add" value="list" onclick="setList()"><span>list</span>
+            </div>
+
+            <div class="addTable" id="addTable" style="display: none">
+                <div class="addTableStyle">
+                    <div class="formGroup">
+                        <label for="countTr">Count TR:</label>
+                        <input type="text" class="countTr" id="countTr" placeholder="Count TR:">
+                    </div>
+                    <div class="formGroup">
+                        <label for="countTd">Count TD:</label>
+                        <input type="text" class="countTd" id="countTd" placeholder="Count TD:">
+                    </div>
+                    <h4>Add style too your table:</h4>
+                    <div class="formGroup">
+                        <label for="widthOfTd">Width of TD:</label>
+                        <input type="text" class="widthOfTd" id="widthOfTd" placeholder="Width of TD">
+                    </div>
+                    <div class="formGroup">
+                        <label for="heightOfTd">Height of TD:</label>
+                        <input type="text" class="heightOfTd" id="heightOfTd" placeholder="Height of TD:">
+                    </div>
+
+                    <div class="styleOfBorder">
+                        <div class="formGroup">
+                            <label for="widthOfBorder">Width of border:</label>
+                            <input type="text" class="widthOfBorder" id="widthOfBorder" placeholder="Width:">
+                        </div>
+                        <p class="margin">Type of border:</p>
+                        <select name="typeOfBorder" class="typeOfBorder" id="typeOfBorder">
+                            <option value="solid">solid</option>
+                            <option value="double">double</option>
+                            <option value="dashed">dashed</option>
+                            <option value="outset">outset</option>
+                        </select>
+
+                        <p class="margin">Color of border:</p>
+                        <select name="colorOfBorder" class="colorOfBorder" id="colorOfBorder">
+                            <option value="black">black</option>
+                            <option value="gray">gray</option>
+                            <option value="brown">brown</option>
+                            <option value="red">red</option>
+                        </select>
+                    </div>
+
+                    <input type="button" name="createTable" class="createTable" value="Create table"
+                        onclick="createTable()">
+                </div>
+            </div>
+
+            <div class="addList" id="addList" style="display: none">
+                <div class="addListStyle">
+                    <div class="form-group">
+                        <label for="countLi">Count Li:</label>
+                        <input type="text" class="countLi" id="countLi" placeholder="Count Li:">
+                    </div>
+
+                    <div class="marks">
+                        <p>Type of marks:</p>
+                        <select name="typeOfMarks" class="typeOfMarks" id="typeOfMarks">
+                            <option value="circle">circle</option>
+                            <option value="disc">disc</option>
+                            <option value="square">square</option>
+                        </select>
+                    </div>
+                    <input type="button" name="createList" class="createList" value="Create list"
+                        onclick="createList()">
+                </div>
+            </div>
+        </div>
+
+        <div class="bottomBoxStyle" id="bottomBoxStyle" style="display: none">
+            <div class="style">
+                <p style="font-weight: bold">Font Size:</p>
+                <div class="radioButton">
+                    <input type="radio" name="tr" value="12px" onclick="setFontSize('12px')">12px
+                    <input type="radio" name="tr" value="14px" onclick="setFontSize('14px')">14px
+                    <input type="radio" name="tr" value="16px" onclick="setFontSize('16px')">16px
+                    <input type="radio" name="tr" value="18px" onclick="setFontSize('18px')">18px
+                    <input type="radio" name="tr" value="20px" onclick="setFontSize('20px')">20px
+                </div>
+
+                <p style="font-weight: bold">Font Family:</p>
+                <select name="fontFamily" class="fontFamily" id="fontFamily" onchange="setFontFamily()">
+                    <option>Choose option</option>
+                    <option value="cursive">cursive</option>
+                    <option value="fantasy">fantasy</option>
+                    <option value="monospase">monospase</option>
+                    <option value="sans-serif">sens-serif</option>
+                </select>
+                <p style="font-weight: bold">Colors:</p>
+                <input type="button" name="btnColorOfText" value="Color of Text" id="colorText" onclick="chooseColor()">
+                <input type="button" name="btnBackgroundColor" value="Background color" id="backgroundText"
+                    onclick="chooseBackground()">
+
+                <div class="boldAndCursive">
+                    <p style="font-weight: bold">Style:</p>
+                    <input type="checkbox" name="bold" id="bold" onclick="setBoltText()">
+                    <label>Bold text</label>
+                    <input type="checkbox" name="cursive" id="cursive" onclick="setCursiveText()">
+                    <label>Cursive text</label>
+                </div>
+
+                <div class="color" id="color" style="display: none">
+                    <div class="red size" onclick="setColor('red')"></div>
+                    <div class="blue size" onclick="setColor('blue')"></div>
+                    <div class="green size" onclick="setColor('green')"></div>
+                    <div class="orange size" onclick="setColor('orange')"></div>
+                    <div class="white size" onclick="setColor('white')"></div>
+                    <div class="yellow size" onclick="setColor('yellow')"></div>
+                    <div class="black size" onclick="setColor('black')"></div>
+                    <div class="pink size" onclick="setColor('pink')"></div>
+                    <div class="purple size" onclick="setColor('purple')"></div>
+                </div>
+
+                <div class="background" id="background" style="display: none">
+                    <div class="gray size" onclick="setBackground('gray')"></div>
+                    <div class="pink size" onclick="setBackground('pink')"></div>
+                    <div class="purple size" onclick="setBackground('purple')"></div>
+                    <div class="red size" onclick="setBackground('red')"></div>
+                    <div class="blue size" onclick="setBackground('blue')"></div>
+                    <div class="green size" onclick="setBackground('green')"></div>
+                    <div class="orange size" onclick="setBackground('orange')"></div>
+                    <div class="white size" onclick="setBackground('white')"></div>
+                    <div class="yellow size" onclick="setBackground('yellow')"></div>
+                </div>
+
+            </div>
+        </div>
+        <script src="index.js"></script>
+</body>
+
+</html>

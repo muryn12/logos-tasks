@@ -1,0 +1,8 @@
+.bird{
+    background-image: url("img/icon_64x64_856249e0e61659b29d6c9a9cac141ebf.png");
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 300px;
+    left: 400px;
+}

@@ -1,0 +1,48 @@
+.card {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.card-header-two:first-child {
+    height: 150px;
+}
+
+.card-footer-two:last-child{
+    height: 100px;
+}
+
+.img{
+    width: 225px;
+    position: relative;
+    top: -120px;
+}
+
+.btn:hover{
+    background-color: green;
+    color: white!important;
+}
+
+.card-two,
+.card-header-two,
+.card-footer-two {
+    border-radius: 0!important;
+}
+
+.img-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-facebook{
+    width: 40px;
+    margin-right: 15px;
+}
+
+.img-github{
+    width: 50px;
+}
+
+.img-linkedin{
+    width: 90px;
+}
