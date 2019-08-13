@@ -12,12 +12,6 @@ function chooseColor(id){
     document.body.style.backgroundImage = "";
 }
 
-// function chooseBlue(){
-//     let blue = document.getElementById("blue");
-//     blue.style.backgroundColor = "blue";
-//     document.body.style.backgroundColor = blue.style.backgroundColor;
-// }
-
 function img(){
     let foto = document.getElementById("foto");
     let background = document.getElementById("background");

@@ -10,7 +10,6 @@
 }
 
 .header {
-    width: 2400px;
     position: relative;
     background-image: url(img/bg.png);
     background-position-y: -500px;
@@ -18,7 +17,6 @@
 
 .overlayTop{
     height: 250px;
-    width: 2400px;
     background-color: white;
     position: absolute;
     opacity: 0.3;
@@ -27,7 +25,6 @@
 
 .overlayBottom{
     height: 120px;
-    width: 2400px;
     background-color: white;
     position: absolute;
     opacity: 0.2;
@@ -208,7 +205,6 @@ header .menu a:hover {
 }
 
 .sectionTop {
-    width: 2400px;
     height: 342px;
     background-image: linear-gradient(to top, #322539 0%, #745083 100%);
 }
@@ -303,7 +299,6 @@ header .menu a:hover {
 }
 
 .sectionCenter {
-    width: 2400px;
     height: 512px;
     background-color: #f9f9f9;
 }
@@ -430,12 +425,11 @@ input[type="radio"] {
 }
 
 .hr {
-    width: 2400px;
     height: 1px;
 }
 
 .trus {
-    width: 2400px;
+    width: 960px;
     height: 122px;
     display: flex;
     flex-wrap: wrap;
@@ -476,7 +470,6 @@ input[type="radio"] {
 
 .sectionBottom{
     background-color: #ececec;
-    width: 2400px;
     height: 350px;
     
 }
@@ -531,7 +524,6 @@ input[type="radio"] {
 }
 
 .footer{
-    width: 2400px;
     height: 170px;
     background-image: url(img/bg.png);
     background-position-y: 170px;

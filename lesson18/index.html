@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="grayBox" id="grayBox">
+        <div class=" button">
+            <a class="btn btn-light edit" href="#" id="edit" onclick="edit()">
+                <i class="fa fa-fw fa-code"></i>
+            </a>
+            <div class="btn-group edit">
+                <a class="btn btn-light" href="#" id="bold" onclick="setBold()">
+                    <i class="fa fa-fw fa-bold"></i>
+                </a>
+                <a class="btn btn-light" href="#" id="cursive" onclick="setCursive()">
+                    <i class="fa fa-fw fa-italic"></i>
+                </a>
+                <a class="btn btn-light" href="#" id="underline" onclick="setUnderline()">
+                    <i class="fa fa-fw fa-underline"></i>
+                </a>
+                <a class="btn btn-light" href="#" id="line-through" onclick="setLineThrough()">
+                    <i class="fa fa-fw fa-strikethrough"></i>
+                </a>
+            </div>
+            <div class="btn-group edit">
+                <a class="btn btn-light" href="#" id="alignLeft" onclick="setAlignLeft()">
+                    <i class="fa fa-fw fa-align-left"></i>
+                </a>
+                <a class="btn btn-light" href="#" id="alignCenter" onclick="setAlignCenter()">
+                    <i class="fa fa-fw fa-align-center"></i>
+                </a>
+                <a class="btn btn-light" href="#" id="alignRight" onclick="setAlignRight()">
+                    <i class="fa fa-fw fa-align-right"></i>
+                </a>
+            </div>
+            <div class="btn-group edit">
+                <div class="dropdown">
+                    <a class="btn btn-light dropdown-toggle border" href="#" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-font"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" style="font-family: Arial"
+                            onclick="setFontFamily('Arial')">Arial</a>
+                        <a class="dropdown-item" href="#" style="font-family: Georgia"
+                            onclick="setFontFamily('Georgia')">Georgia</a>
+                        <a class="dropdown-item" href="#" style="font-family: Impact"
+                            onclick="setFontFamily('Impact')">Impact</a>
+                        <a class="dropdown-item" href="#" style="font-family: Tahoma"
+                            onclick="setFontFamily('Tahoma')">Tahoma</a>
+                        <a class="dropdown-item" href="#" style="font-family: Times New Roman"
+                            onclick="setFontFamily('Times New Roman')">Times New Roman</a>
+                        <a class="dropdown-item" href="#" style="font-family: Verdana"
+                            onclick="setFontFamily('Verdana')">Verdana</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="btn btn-light dropdown-toggle raDius" href="#" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-text-height"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" style="font-size: 12px" onclick="setFontSize('12px')">12px</a>
+                        <a class="dropdown-item" href="#" style="font-size: 14px" onclick="setFontSize('14px')">14px</a>
+                        <a class="dropdown-item" href="#" style="font-size: 16px" onclick="setFontSize('16px')">16px</a>
+                        <a class="dropdown-item" href="#" style="font-size: 18px" onclick="setFontSize('18px')">18px</a>
+                        <a class="dropdown-item" href="#" style="font-size: 20px" onclick="setFontSize('20px')">20px</a>
+                        <a class="dropdown-item" href="#" style="font-size: 25px" onclick="setFontSize('25px')">25px</a>
+                        <a class="dropdown-item" href="#" style="font-size: 30px" onclick="setFontSize('30px')">30px</a>
+                    </div>
+                </div>
+                <a class="btn btn-light" href="#" data-toggle="modal" data-target="#myModalColor">
+                    <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                </a>
+                <!-- <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+                    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <p class="modal-title" id="exampleModalLabel">Choose text color</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <hr> -->
+
+                            <div class="modal fade " id="myModalColor" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" style="font-size: 16px">Choose text color</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="color" id="color">
+                                <div class="darkRed size" onclick="setColorText('darkRed')"></div>
+                                <div class="red size" onclick="setColorText('red')"></div>
+                                <div class="rosybrown size" onclick="setColorText('rosybrown')"></div>
+                                <div class="coral size" onclick="setColorText('coral')"></div>
+                                <div class="crimson size" onclick="setColorText('crimson')"></div>
+                                <div class="orange size" onclick="setColorText('orange')"></div>
+                                <div class="blue size" onclick="setColorText('blue')"></div>
+                                <div class="aqua size" onclick="setColorText('aqua')"></div>
+                                <div class="lightBlue size" onclick="setColorText('lightBlue')"></div>
+                                <div class="green size" onclick="setColorText('green')"></div>
+                                <div class="lime size" onclick="setColorText('lime')"></div>
+                                <div class="lightseagreen size" onclick="setColorText('lightseagreen')"></div>
+                                <div class="lightYellow size" onclick="setColorText('lightYellow')"></div>
+                                <div class="yellow size" onclick="setColorText('yellow')"></div>
+                                <div class="gold size" onclick="setColorText('gold')"></div>
+                                <div class="pink size" onclick="setColorText('pink')"></div>
+                                <div class="purple size" onclick="setColorText('purple')"></div>
+                                <div class="lightGrey size" onclick="setColorText('lightGrey')"></div>
+                                <div class="darkGrey size" onclick="setColorText('darkGrey')"></div>
+                                <!-- <div class="white size" onclick="setColorText('white')"></div> -->
+                                <div class="black size" onclick="setColorText('black')"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-light radius" href="#" data-toggle="modal" data-target="#myModal">
+                    <i class="fa fa-fw fa-image"></i>
+                </a>
+                <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" style="font-size: 16px">Choose backgroundcolor or image</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- <p class="modal-title" id="exampleModalLabel">Choose backgroundcolor or image</p>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button> -->
+                            <div class="modal-body">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                            role="tab" aria-controls="home" aria-selected="true">Colors</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
+                                            role="tab" aria-controls="profile" aria-selected="false">Images</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
+                                            role="tab" aria-controls="contact" aria-selected="false">Files</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                        aria-labelledby="home-tab">
+                                        <div class="background" id="background">
+                                            <div class="red size" onclick="setBackground('red')"></div>
+                                            <div class="blue size" onclick="setBackground('blue')"></div>
+                                            <div class="green size" onclick="setBackground('green')"></div>
+                                            <div class="orange size" onclick="setBackground('orange')"></div>
+                                            <!-- <div class="white size" onclick="setBackground('white')"></div> -->
+                                            <div class="yellow size" onclick="setBackground('yellow')"></div>
+                                            <div class="black size" onclick="setBackground('black')"></div>
+                                            <div class="pink size" onclick="setBackground('pink')"></div>
+                                            <div class="purple size" onclick="setBackground('purple')"></div>
+                                            <div class="lightGrey size" onclick="setBackground('lightGrey')"></div>
+                                            <div class="darkGrey size" onclick="setBackground('darkGrey')"></div>
+                                            <div class="darkRed size" onclick="setBackground('darkRed')"></div>
+                                            <div class="gold size" onclick="setBackground('gold')"></div>
+                                            <div class="lightYellow size" onclick="setBackground('lightYellow')"></div>
+                                            <div class="lime size" onclick="setBackground('lime')"></div>
+                                            <div class="aqua size" onclick="setBackground('aqua')"></div>
+                                            <div class="rosybrown size" onclick="setBackground('rosybrown')"></div>
+                                            <div class="lightBlue size" onclick="setBackground('lightBlue')"></div>
+                                            <div class="coral size" onclick="setBackground('coral')"></div>
+                                            <div class="crimson size" onclick="setBackground('crimson')"></div>
+                                            <div class="lightseagreen size" onclick="setBackground('lightseagreen')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel"
+                                        aria-labelledby="profile-tab">
+                                        <div id="foto" class="foto">
+                                            <img src="img/0335_cward2010-07833-printsc-459x305.jpg" id="one"
+                                                class="nature" onclick="chooseImage('one')">
+                                            <img src="img/250px-Bachalpsee_reflection.jpg" id="two" class="nature"
+                                                onclick="chooseImage('two')">
+                                            <img src="img/Annabaroo_David-Wagland.jpg" id="three" class="nature"
+                                                onclick="chooseImage('three')">
+                                            <img src="img/d863e1bfdd2acba50732d48ca8a70cb0.jpg" id="four" class="nature"
+                                                onclick="chooseImage('four')">
+                                            <img src="img/mountain_brook.jpg" id="five" class="nature"
+                                                onclick="chooseImage('five')">
+                                            <img src="img/nature-01.jpg" id="six" class="nature"
+                                                onclick="chooseImage('six')">
+                                            <img src="img/nature-wallpaper14.jpg" id="seven" class="nature"
+                                                onclick="chooseImage('seven')">
+                                            <img src="img/pexels-photo-236047.jpeg" id="eight" class="nature"
+                                                onclick="chooseImage('eight')">
+                                            <img src="img/pexels-photo-257360.jpeg" id="nine" class="nature"
+                                                onclick="chooseImage('nine')">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="contact" role="tabpanel"
+                                        aria-labelledby="contact-tab">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-light" href="#" data-toggle="modal" data-target="#loginModal">
+                <i class="fa fa-fw fa-lock"></i>
+            </a>
+            <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <p style="text-align: center">Sign in </p>
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control signIn" id="login" placeholder="Login here...">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control signIn" id="password"
+                                    placeholder="Password here...">
+                            </div>
+                        </div>
+                        <div id="mistake"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="button" class="btn btn-primary signIn" onclick="validationSignIn()">Sign
+                                    in</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="paragrafBox">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+
+    <div class="grayBox boxEdit" id="boxEdit" style="display: none">
+        <div class="btn-group">
+            <a class="btn btn-light" href="#" id="save" onclick="save()">
+                <i class="fa fa-fw fa-save"></i>
+            </a>
+            <a class="btn btn-light" href="#" data-toggle="modal" data-target="#tableModal">
+                <i class="fa fa-fw fa-table"></i>
+            </a>
+            <div id="tableModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create Table</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <hr>
+                        <div class="form-row" style="margin: 0 10px">
+                            <div class="col-md-6">
+                                <label for="countTr">Count TR:</label>
+                                <input type="text" class="countTr form-control" id="countTr" placeholder="Type here:">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="countTd">Count TD:</label>
+                                <input type="text" class="countTd form-control" id="countTd" placeholder="Type here:">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="widthOfTd">Width of TD:</label>
+                                <input type="text" class="widthOfTd form-control" id="widthOfTd"
+                                    placeholder="Type here:">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="heightOfTd">Height of TD:</label>
+                                <input type="text" class="heightOfTd form-control" id="heightOfTd"
+                                    placeholder="Type here:">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="widthOfBorder">Width of border:</label>
+                                <input type="text" class="widthOfBorder" id="widthOfBorder" placeholder="Type here:">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="typeOfBorder" class="typeOfBorder">Style of border:</label>
+                                <select name="typeOfBorder" class="typeOfBorder" id="typeOfBorder"
+                                    placeholder="Type here:">
+                                    <option value="">choose style</option>
+                                    <option value="solid">solid</option>
+                                    <option value="double">double</option>
+                                    <option value="dashed">dashed</option>
+                                    <option value="outset">outset</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="colorOfBorder" class="colorOfBorder">Color of border:</label>
+                                <select name="colorOfBorder" class="colorOfBorder" id="colorOfBorder">
+                                    <option value="">choose color</option>
+                                    <option value="black">black</option>
+                                    <option value="gray">gray</option>
+                                    <option value="brown">brown</option>
+                                    <option value="red">red</option>
+                                </select>
+                            </div>
+                            <div id="error"></div>
+                            <div class="marks">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-primary reset"
+                                        onclick="resetTable()">Reset</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-secondary create"
+                                        onclick="createTable()">Create table</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-light" href="#" data-toggle="modal" data-target="#exampleModal">
+                <i class="fa fa-fw fa-list-ul"></i>
+            </a>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create Ul</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="countLi">Count Li:</label>
+                                <input type="text" class="countLi" id="countLi" placeholder="Type here:">
+                            </div>
+                            <div class="marks">
+                                <p>Type of marks:</p>
+                                <select name="typeOfMarks" class="typeOfMarks" id="typeOfMarks">
+                                    <option value="">Choose Ul type mark</option>
+                                    <option value="disc">disc</option>
+                                    <option value="circle">circle</option>
+                                    <option value="square">square</option>
+                                    <option value="none">none</option>
+                                </select>
+                            </div>
+                            <div id="errorUl"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary reset" onclick="resetUl()">Reset</button>
+                            <button type="button" class="btn btn-secondary create" onclick="createUl()">Create
+                                list</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="btn btn-light radius" href="#" data-toggle="modal" data-target="#myExampleModal">
+                <i class="fa fa-fw fa-list-ol"></i>
+            </a>
+            <div class="modal fade" id="myExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create Ol</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="countLiOl">Count Li:</label>
+                                <input type="text" class="countLiOl" id="countLiOl" placeholder="Type here:">
+                            </div>
+                            <div class="marks">
+                                <p>Type of marks:</p>
+                                <select name="typeOfMarksOl" class="typeOfMarksOl" id="typeOfMarksOl">
+                                    <option value="">Choose Ol type mark</option>
+                                    <option value="decimal">decimal</option>
+                                    <option value="lower-alpha">lower-alpha</option>
+                                    <option value="upper-alpha">upper-alpha</option>
+                                    <option value="lower-greek">lower-greek</option>
+                                    <option value="upper-roman">upper-roman</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="errorOl"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary reset" onclick="resetOl()">Reset</button>
+                            <button type="button" class="btn btn-secondary create" onclick="createOl()">Create
+                                list</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <textarea name="textarea" id="myTextarea" class="textarea" cols="30" rows="10" style="display: none"></textarea>
+    </div>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</body>
+
+</html>

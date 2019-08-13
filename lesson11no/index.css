@@ -1,0 +1,40 @@
+body{
+    background-image: url("img/light-brown-wooden-textured-background_53876-75016.jpg");
+}
+.ipad{
+    background-image: url("img/210-2106943_collection-of-free-ipad-vector-blank-download-on.png");
+    background-repeat: no-repeat;
+    height: 500px;
+    margin-left: 300px;
+}
+
+.text{
+    color: red;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+/* .chek{
+    background-color: bisque;
+    width: 260px;
+    height: 398px;
+    display: flex;
+    flex-wrap: nowrap; 
+    position: relative;
+    left: 58px;
+    top: 48px;
+}
+
+.add{
+    background-color: bisque;
+    width: 272px;
+    height: 398px;
+    position: relative;
+    left: 318px;
+    top: -350px;
+}
+
+.task{
+    position: absolute;
+} */

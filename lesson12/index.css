@@ -136,6 +136,54 @@ input[type="button"]{
     background-color: black;
 }
 
+.lightGrey{
+    background-color: lightgrey;
+}
+
+.darkGrey{
+    background-color: darkgrey;
+}
+
+.darkRed{
+    background-color: darkred;
+}
+
+.gold{
+    background-color: gold;
+}
+
+.lightYellow{
+    background-color: lightyellow;
+}
+
+.lime{
+    background-color: lime;
+}
+
+.aqua{
+    background-color: aqua;
+}
+
+.rosybrown{
+    background-color: rosybrown;
+}
+
+.lightBlue{
+    background-color: lightblue;
+}
+
+.coral{
+    background-color: coral;
+}
+
+.crimson{
+    background-color: crimson;
+}
+
+.lightseagreen{
+    background-color: lightseagreen;
+}
+
 .something{
     width: 650px;
     min-height: 130px;
